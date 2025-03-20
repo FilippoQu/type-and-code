@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "Scrt",
+  testo: "s",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -9,7 +9,7 @@ export const configurazione = {
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,26 +42,59 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
-
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
+  let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 35);
+  let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 35, 1);
+  fill("black");
   noStroke();
+  ellipse(x, y, larghezza);
+  fill("#F2B705");
+  noStroke();
+  ellipse(x, y + 10, larghezza2);
+  fill("#F29F05");
+  noStroke();
+  ellipse(x, y + 20, larghezza);
+  fill("#F28705");
+  noStroke();
+  ellipse(x, y + 30, larghezza2);
+  fill("#F25C05");
+  noStroke();
+  ellipse(x, y + 40, larghezza);
+  fill("#F23005");
+  noStroke();
+  ellipse(x, y + 50, larghezza2);
+  ////////////////////////////////
 
-  push();
-  translate(x, y);
-  ellipse(0, 0, size);
-  pop();
+  // push();
+  // translate(x, y);
+  // rotate(random(0, 360));
+  // translate(frameCount, 0);
+  // fill("#F28705");
+  // ellipse(0, 0, 20, 20);
+  // pop();
+
+  //////
+
+  ////////////
+  // let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 20);
+  // let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 20, 1);
+
+  // let rosso = map(volume * 1000, 0, 1, 0, 155);
+
+  // fill(rosso, 0, random(0, 255));
+  // noStroke();
+  // rect(x, y, larghezza, larghezza);
+  //
 }
+
+let img;
 
 /**
  * Carica le risorse necessarie
  * Esempio: carica immagini, suoni, ecc.
  */
-export function caricamentoRisorse() {}
+export function caricamentoRisorse() {
+  img = loadImage("assets/brian-griffin-photo-u4-e1552040224686.jpg");
+}
 
 /**
  * Imposta le impostazioni iniziali
@@ -70,6 +103,7 @@ export function caricamentoRisorse() {}
 export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
 /**
@@ -77,10 +111,10 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("black");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("white");
+  fill("black");
   disegnaTesto();
 }
 
