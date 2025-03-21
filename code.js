@@ -42,26 +42,26 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 35);
-  let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 35, 1);
-  fill("black");
-  noStroke();
-  ellipse(x, y, larghezza);
-  fill("#F2B705");
-  noStroke();
-  ellipse(x, y + 10, larghezza2);
-  fill("#F29F05");
-  noStroke();
-  ellipse(x, y + 20, larghezza);
-  fill("#F28705");
-  noStroke();
-  ellipse(x, y + 30, larghezza2);
-  fill("#F25C05");
-  noStroke();
-  ellipse(x, y + 40, larghezza);
-  fill("#F23005");
-  noStroke();
-  ellipse(x, y + 50, larghezza2);
+  // let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 35);
+  // let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 35, 1);
+  // fill("black");
+  // noStroke();
+  // ellipse(x, y, larghezza);
+  // fill("#F2B705");
+  // noStroke();
+  // ellipse(x, y + 10, larghezza2);
+  // fill("#F29F05");
+  // noStroke();
+  // ellipse(x, y + 20, larghezza);
+  // fill("#F28705");
+  // noStroke();
+  // ellipse(x, y + 30, larghezza2);
+  // fill("#F25C05");
+  // noStroke();
+  // ellipse(x, y + 40, larghezza);
+  // fill("#F23005");
+  // noStroke();
+  // ellipse(x, y + 50, larghezza2);
   //////////////////////////////
 
   // push();
@@ -75,14 +75,14 @@ export function disegnaPunto({
   //////
 
   ////////////
-  // let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 20);
-  // let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 20, 1);
+  let larghezza = map(sin(frameCount * 5 + indice), -1, 1, 1, 35);
+  let larghezza2 = map(sin(frameCount * 5 + indice), -1, 1, 35, 1);
 
-  // let rosso = map(volume * 1000, 0, 1, 0, 155);
+  let rosso = map(volume * 1000, 0, 1, 0, 155);
 
-  // fill(rosso, 0, random(0, 255));
-  // noStroke();
-  // rect(x, y, larghezza, larghezza);
+  fill(rosso, 0, random(0, 255));
+  noStroke();
+  rect(x, y, larghezza, larghezza);
   //
 }
 
