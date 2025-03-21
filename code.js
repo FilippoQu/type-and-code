@@ -62,7 +62,7 @@ export function disegnaPunto({
   fill("#F23005");
   noStroke();
   ellipse(x, y + 50, larghezza2);
-  ////////////////////////////////
+  //////////////////////////////
 
   // push();
   // translate(x, y);
